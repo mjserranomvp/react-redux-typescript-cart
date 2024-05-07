@@ -19,9 +19,15 @@ const Cart = () => {
       ></div>
       <div className=" -translate-x-1/2 -translate-y-1/3 top-1/3 left-1/2 fixed bg-yellow-800 p-5 rounded-2xl text-white w-1/2 space-y-2">
         <h2 className=" pb-2">Cart</h2>
-        {cartItems.map((item) => (
-          <CartItems key={item.id} {...item} />
-        ))}
+        {cartItems.length > 0 ? (
+          <>
+            {cartItems.map((item) => (
+              <CartItems key={item.id} {...item} />
+            ))}
+          </>
+        ) : (
+          "No items in the cart"
+        )}
         <p className="float-right p-1">Total: ${total.toLocaleString()}</p>
       </div>
     </>,

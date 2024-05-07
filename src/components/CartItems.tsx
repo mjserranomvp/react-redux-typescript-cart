@@ -1,14 +1,7 @@
-import { addToCart, removeFromCart } from "../store/cart-slice";
+import { CartItem, addToCart, removeFromCart } from "../store/cart-slice";
 import { useCartDispatch } from "../store/hooks";
 
-type Props = {
-  id: string;
-  title: string;
-  price: number;
-  quantity: number;
-};
-
-const CartItems = ({ id, price, quantity, title }: Props) => {
+const CartItems = ({ id, price, quantity, title }: CartItem) => {
   const dispatch = useCartDispatch();
 
   const itemsTotalPrice = price * quantity;
